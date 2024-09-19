@@ -3,44 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamburguesas en AR</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
-        .container {
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .scan-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
-            font-size: 16px;
-            margin: 20px 0;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Centro de Realidad Aumentada - Hamburguesas</title>
 </head>
 <body>
+    <h1>Bienvenido a la Experiencia de Hamburguesas en Realidad Aumentada</h1>
 
-    <div class="container">
-        <h1>Bienvenido a Hamburguesas en AR</h1>
-
-        <!-- Botón que redirige a la página de QR -->
-        <button class="scan-btn" onclick="window.location.href='qr-list.html'">Ver Códigos QR</button>
-    </div>
-
+    <p>Haz clic en el botón de abajo para escanear un código QR y ver tu hamburguesa en 3D con realidad aumentada.</p>
+    
+    <!-- Botón para escanear código QR -->
+    <button onclick="window.location.href='qr-scanner.html'">Escanear Código QR</button>
+    
+    <!-- Botón para ver la lista de códigos QR (para pruebas) -->
+    <button onclick="window.location.href='qr-list.html'">Ver Códigos QR</button>
 </body>
 </html>
