@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escanea tu Hamburguesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .qr-scanner {
+            margin: auto;
+            width: 300px;
+        }
+        #qr-reader {
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Escanea tu Hamburguesa</h1>
+        
+        <!-- Aquí se mostrará la cámara para escanear el QR -->
+        <div id="qr-reader" class="qr-scanner"></div>
+    </div>
+
+    <script>
+        function onScanSuccess(qrMessage) {
+            // Este mensaje QR será la URL del archivo .glb (por ejemplo, clasica.glb)
+            console.log("QR Code: ", qrMessage);
+
+            // Redirigir al archivo o modelo correcto
+            if (qrMessage.includes('clasica')) {
+                window.location.href = "clasica.html";
+            } else if (qrMessage.includes('doble')) {
+                window.location.href = "doble.html";
+            } else if (qrMessage.includes('vegana')) {
+                window.location.href = "vegana.html";
+            } else {
+                alert('QR no reconocido');
+            }
+        }
+
+        function onScanError(errorMessage) {
+            console.log("Error en el escaneo: ", errorMessage);
+        }
+
+        var qrScanner = new Html5QrcodeScanner("qr-reader", { fps: 10, qrbox: 250 });
+        qrScanner.render(onScanSuccess, onScanError);
+    </script>
+</body>
+</html>
